@@ -12,6 +12,7 @@ class Circulo: public Forma{
         std::string descricao() const override;
         Circulo operator+(const Circulo& c2);
         Circulo operator*(const double fator);
+        Circulo operator*=(const double fator);
         bool operator==(const Circulo& c2);
         friend std::ostream& operator<<(std::ostream& os, const Circulo& c2);
 

@@ -44,6 +44,15 @@ Circulo Circulo::operator*(const double fator){
     return Circulo(this->nome, raio*fator);
 }
 
+Circulo Circulo::operator*=(const double fator){
+    if(fator <=0)
+    {
+        throw std::invalid_argument("O fator não pode ser negativo");
+    }
+
+    return Circulo(this->nome, this->raio*=fator);
+}
+
 bool Circulo::operator==(const Circulo& c2){
     if(this->raio == c2.raio){
         return true;
