@@ -15,6 +15,16 @@ int main(){
     for (auto f: formas)
         delete f;
     formas.clear();
-    
+
+    std::cout << 'Operadores ' << std::endl;
+
+    Retangulo r1("R1", 2, 3);
+    Retangulo r2("R2", 1, 1);
+    r1 *= 2.5;
+    std ::cout << r1 << std ::endl;
+    std ::cout << (r1 + r2) << std ::endl;
+    std ::cout << (r1 * 2) << std ::endl;
+
+
     return 0;
 }
