@@ -51,6 +51,15 @@ Retangulo Retangulo::operator*(const double fator){
     return Retangulo(this->nome, largura*fator, altura*fator);
 }
 
+Retangulo Retangulo::operator*=(const double fator){
+    if (fator <= 0)
+    {
+        throw std::invalid_argument("Não pode multiplicar por fator negativo!");
+    }
+
+    return Retangulo(this->nome, largura*=fator, altura*=fator);
+}
+
 bool Retangulo::operator==(const Retangulo& r2){
     if(largura == r2.largura && altura == r2.altura){
         return true;

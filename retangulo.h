@@ -13,6 +13,7 @@ class Retangulo : public Forma{
         std::string descricao() const override;
         Retangulo operator+(const Retangulo& r2);
         Retangulo operator*(const double fator);
+        Retangulo operator*=(const double fator);
         bool operator==(const Retangulo& r2);
         bool operator<(const Retangulo& r2);
         bool operator>(const Retangulo& r2);
