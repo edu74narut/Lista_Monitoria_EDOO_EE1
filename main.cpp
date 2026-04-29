@@ -28,13 +28,18 @@ int main(){
 
     std::cout <<"Templates"<< std::endl;
     // Par<Retangulo, Circulo>
-    Retangulo r3("R1", 3, 4);
+    Retangulo r3("R3", 3, 4);
     Circulo c1("C1", 5);
     Par<Retangulo, Circulo> p1(r1, c1);
     std::cout << p1 << std ::endl;
     // invertido() gera Par<Circulo, Retangulo>
     Par<Circulo, Retangulo> p2 = p1.invertido();
     std::cout << p2 << std ::endl;
+
+    std::cout << "Excecao" <<std::endl;
+    Retangulo r4("R4", 1, 1);
+    r2 *= -1;
+    Circulo c2("C2", -5);
 
 
     return 0;
