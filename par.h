@@ -21,10 +21,7 @@ public:
 
 // Ainda no arquivo .h, logo abaixo da classe:
 template<typename T, typename U>
-Par<T,U>::Par(T primeiro, U segundo){
-    this->primeiro = primeiro;
-    this->segundo = segundo;
-}
+Par<T,U>::Par(T primeiro, U segundo) : primeiro(primeiro), segundo(segundo) {}
 
 template<typename T, typename U>
 T Par<T, U>::getPrimeiro() const {

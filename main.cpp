@@ -1,5 +1,6 @@
 #include "retangulo.h"
 #include "circulo.h"
+#include "par.h"
 #include <vector>
 #include <iostream>
 
@@ -24,6 +25,16 @@ int main(){
     std ::cout << r1 << std ::endl;
     std ::cout << (r1 + r2) << std ::endl;
     std ::cout << (r1 * 2) << std ::endl;
+
+    std::cout <<"Templates"<< std::endl;
+    // Par<Retangulo, Circulo>
+    Retangulo r3("R1", 3, 4);
+    Circulo c1("C1", 5);
+    Par<Retangulo, Circulo> p1(r1, c1);
+    std::cout << p1 << std ::endl;
+    // invertido() gera Par<Circulo, Retangulo>
+    Par<Circulo, Retangulo> p2 = p1.invertido();
+    std::cout << p2 << std ::endl;
 
 
     return 0;
