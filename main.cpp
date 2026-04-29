@@ -16,7 +16,7 @@ int main(){
         delete f;
     formas.clear();
 
-    std::cout << 'Operadores ' << std::endl;
+    std::cout << "Operadores" << std::endl;
 
     Retangulo r1("R1", 2, 3);
     Retangulo r2("R2", 1, 1);
