@@ -21,6 +21,7 @@ std::string Circulo::descricao() const{
     std::ostringstream oss;
     oss << "[" << nome << "] | Area: " << std::fixed << area()
         << " | Perimetro: " << perimetro();
+    return oss.str();
 }
 
 Circulo Circulo::operator+(const Circulo& c2){

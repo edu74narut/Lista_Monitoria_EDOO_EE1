@@ -64,7 +64,7 @@ bool Retangulo::operator<(const Retangulo& r2){
     return false;
 }
 
-bool Retangulo::operator<(const Retangulo& r2){
+bool Retangulo::operator>(const Retangulo& r2){
     if(this->area() > r2.area())
         return true;
     return false;
