@@ -32,7 +32,7 @@ int main(){
     Circulo c1("C1", 5);
     Par<Retangulo, Circulo> p1(r1, c1);
     std::cout << p1 << std ::endl;
-    // invertido() gera Par<Circulo, Retangulo>
+    // invertido() gera Par<Circulo, Retangulo> 
     Par<Circulo, Retangulo> p2 = p1.invertido();
     std::cout << p2 << std ::endl;
 
