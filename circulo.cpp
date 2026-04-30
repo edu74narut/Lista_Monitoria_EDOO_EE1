@@ -26,22 +26,31 @@ std::string Circulo::descricao() const{
 
 Circulo Circulo::operator+(const Circulo& c2){
     double novoRaio = this->raio + c2.raio;
-    
-    if(novoRaio <= 0)
-    {
-        throw std::invalid_argument("Não tem circulos negativos");
+    try{
+        if(novoRaio <= 0)
+        {
+            throw std::invalid_argument("Não tem circulos negativos");
+        }
+        return Circulo(this->nome + " + " + c2.nome, novoRaio);
+    }catch(std::invalid_argument& e){
+        std::cerr << "[ERRO LOCAL]: " << e.what() << " Mantendo valores originais." << std::endl;
+        return *this;
     }
-
-    return Circulo(this->nome + " + " + c2.nome, novoRaio);
+    
 }
 
 Circulo Circulo::operator*(const double fator){
-    if(fator <=0)
-    {
-        throw std::invalid_argument("O fator não pode ser negativo");
-    }
+    try{
+        if(fator <=0)
+        {
+            throw std::invalid_argument("O fator não pode ser negativo");
+        }
 
-    return Circulo(this->nome, raio*fator);
+        return Circulo(this->nome, raio*fator);
+    }catch(std::invalid_argument& e){
+        std::cerr << "[ERRO LOCAL]: " << e.what() << " Mantendo valores originais." << std::endl;
+        return *this;
+    }
 }
 
 Circulo Circulo::operator*=(const double fator){
