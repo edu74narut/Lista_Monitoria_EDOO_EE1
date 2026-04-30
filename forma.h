@@ -2,6 +2,7 @@
 #define FORMA_H
 #include <string>
 #include <sstream>
+#include <iostream>
 
 class Forma{
     protected:

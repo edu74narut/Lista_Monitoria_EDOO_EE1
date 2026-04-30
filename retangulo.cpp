@@ -43,21 +43,31 @@ Retangulo Retangulo::operator+(const Retangulo& r2){
 }
 
 Retangulo Retangulo::operator*(const double fator){
-    if (fator <= 0)
-    {
+    try{
+        if (fator <= 0)
+        {
         throw std::invalid_argument("Não pode multiplicar por fator negativo!");
+        }
+        return Retangulo(this->nome, largura*fator, altura*fator);
     }
-
-    return Retangulo(this->nome, largura*fator, altura*fator);
+    catch(const std::invalid_argument& e){
+        std::cerr << "[ERRO LOCAL]: " << e.what() << " Mantendo valores originais." << std::endl;
+        return *this;
+    }
 }
 
 Retangulo Retangulo::operator*=(const double fator){
-    if (fator <= 0)
-    {
+    try{
+        if (fator <= 0)
+        {
         throw std::invalid_argument("Não pode multiplicar por fator negativo!");
+        }
+        return Retangulo(this->nome, largura*=fator, altura*=fator);
     }
-
-    return Retangulo(this->nome, largura*=fator, altura*=fator);
+    catch(const std::invalid_argument& e){
+        std::cerr << "[ERRO LOCAL]: " << e.what() << " Mantendo valores originais." << std::endl;
+        return *this;
+    }
 }
 
 bool Retangulo::operator==(const Retangulo& r2){
