@@ -39,7 +39,7 @@ int main(){
     std::cout << "Excecao" <<std::endl;
     Retangulo r4("R4", 1, 1);
     r2 *= -1;
-    Circulo c2("C2", -5);
+    Circulo c2("C2", -5);   
 
 
     return 0;

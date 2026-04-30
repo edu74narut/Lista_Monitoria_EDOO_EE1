@@ -1,18 +1,12 @@
 #include "circulo.h"
+#include <cmath>
 
 Circulo::Circulo(const std::string& nome, double raio) :
     Forma(nome),
-    raio(raio)
+    raio(std::abs(raio))
     {
-        try{
-            if(raio < 0){
-            throw std::invalid_argument("O raio não pode ser negativo!");
-            }
-        }
-        catch(std::invalid_argument& e){
-            std::cerr << "[ERRO LOCAL] " << e.what() << "Definindo raio como positivo" << std::endl;
-            this->raio = raio*-1;
-        }   
+        if(raio < 0)
+            std::cerr << "Raio negativo foi alterado para positivo!" << "\n";
     }
 
 double Circulo::area() const{
